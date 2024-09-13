@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../CSS/cart.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="bg-success text-white text-center py-4">
+    <h1>Your Shopping Cart</h1>
+    <h2 id="welcomeMsg"></h2>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mt-4">
+    <div class="row">
+      <!-- Left Half: Products in the Cart -->
+      <div class="col-md-8" id="cartContainer">
+        <!-- Cart items will be dynamically generated here -->
+      </div>
+
+      <!-- Right Half: Summary and Total Amount -->
+      <div class="col-md-4" id="summaryContainer">
+        <h4>Summary</h4>
+        <p id="totalAmount"></p>
+        <button class="btn btn-success btn-block" onclick="checkout()">Checkout</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-success text-white text-center py-3">
+    <p>© 2024 Online Grocery Store</p>
+    <button class="btn btn-light" onclick="logout()">Logout</button>
+  </footer>
+
+  <script src="../Javascript/cart.js"></script>
+</body>
+</html>
