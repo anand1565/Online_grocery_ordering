@@ -9,42 +9,45 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-        <title>Registration Page</title>
-    </head>
-    
-    <body>
-        <div class="container d-flex justify-content-center align-items-center mt-3 ">
-            <form class="w-75 border border-secondary py-2 px-5 rounded bg-body-tertiary" onsubmit="return validateForm(event);">
-            <span class="text-end bg-danger" id="errorMessage"></span>
-            <div>
-                <h2 class="text-center">Registration</h2>
-            </div>
-            <div class="mb-3">
-                <label for="customerId" class="form-label">Customer Id</label>
-                <input type="number" class="form-control" id="customerId" placeholder="Customer Id">
-            </div>
-            <div class="mb-3">
-                <label for="customerName" class="form-label">Customer Name</label>
-                <input type="text" class="form-control" id="customerName" placeholder="Customer Name">
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Email">
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password">
-            </div>
-            <div class="mb-3">
-                <label for="address" class="form-label">Address</label>
-                <input type="text" class="form-control" id="address" placeholder="Address">
-            </div>
-            <div class="mb-3">
-                <label for="contact" class="form-label">Contact</label>
-                <input type="number" maxlength="10" class="form-control" id="contact" placeholder="Contact Number">
-            </div>
-            <button type="submit" id="submit" class="btn btn-primary w-100">Sign Up</button>
-        </form>
+    <title>Registration Page</title>
+</head>
+
+<body>
+    <div class="vh-100 vw-100 container d-flex justify-content-center align-items-center ">
+        <div class="w-75">
+            <form class="border border-secondary py-5 px-5 rounded bg-body-tertiary"
+                onsubmit="return validateForm(event);">
+                <span class="text-end bg-danger" id="errorMessage"></span>
+                <div>
+                    <h2 class="text-center">Registration</h2>
+                </div>
+                <div class="mb-3">
+                    <label for="customerId" class="form-label">Customer Id</label>
+                    <input type="number" class="form-control" id="customerId" placeholder="Customer Id">
+                </div>
+                <div class="mb-3">
+                    <label for="customerName" class="form-label">Customer Name</label>
+                    <input type="text" class="form-control" id="customerName" placeholder="Customer Name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Email">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password">
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address" placeholder="Address">
+                </div>
+                <div class="mb-3">
+                    <label for="contact" class="form-label">Contact</label>
+                    <input type="number" maxlength="10" class="form-control" id="contact" placeholder="Contact Number">
+                </div>
+                <button type="submit" id="submit" class="btn btn-primary w-100">Sign Up</button>
+            </form>
+        </div>
     </div>
     <script src="../Javascript/registration.js"></script>
 </body>
