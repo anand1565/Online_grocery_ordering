@@ -1,42 +1,55 @@
 // Load cart data from localStorage and display it
 
-  function loadCart() {
-    const cart = JSON.parse(localStorage.getItem('cart'));
-    console.log(cart);
-    const cartContainer = document.getElementById('cartContainer');
-    const totalAmountElem = document.getElementById('totalAmount');
-    cartContainer.innerHTML = '';
-    let totalAmount = 0;
-  
-    if (cart.length === 0) {
-      cartContainer.innerHTML = '<p>Your cart is empty.</p>';
-      totalAmountElem.innerHTML = '<p><strong>Total Amount: $0.00</strong></p>';
-    } else {
-      cart.forEach((item, index) => {
-        totalAmount += item.price;
-  
-        const cartItem = document.createElement('div');
-        cartItem.classList.add('row', 'mb-3');
-  
-        cartItem.innerHTML = `
-          <div class="col-md-8">
-            <h5>${item.name}</h5>
-            <p>${item.description}</p>
-          </div>
-          <div class="col-md-2">
-            <p><strong>$${item.price}</strong></p>
-          </div>
-          <div class="col-md-2">
-            <button class="btn btn-danger" onclick="removeFromCart(${index})">Remove</button>
-          </div>
+function loadCart() {
+  const cart = JSON.parse(localStorage.getItem('cart'));
+  console.log(cart);
+  const cartContainer = document.getElementById('cartContainer');
+  const totalAmountElem = document.getElementById('totalAmount');
+  cartContainer.innerHTML = '';
+  let totalAmount = 0;
+
+  if (cart.length === 0) {
+    cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+    totalAmountElem.innerHTML = '<p><strong>Total Amount: $0.00</strong></p>';
+  } else {
+    cart.forEach((item, index) => {
+      totalAmount += item.price;
+
+      const cartItem = document.createElement('div');
+      cartItem.classList.add('row', 'mb-4', 'gap-2');
+
+      cartItem.innerHTML = `
+        <div class="card" style="width: 18rem;">
+          <img src=${item.image} class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">${item.name}</h5>
+              <p class="card-text">${item.description}</p>
+              <h6>$${item.price}</h6>
+              <button class="btn btn-danger" onclick="removeFromCart(${index})">Remove</button>
+            </div>
+        </div>
         `;
-  
-        cartContainer.appendChild(cartItem);
-      });
-  
-      totalAmountElem.innerHTML = `<p><strong>Total Amount:</strong> $${totalAmount}</p>`;
-    }
+
+
+      // cartItem.innerHTML = `
+      //     <div class="col-md-8">
+      //       <h5>${item.name}</h5>
+      //       <p>${item.description}</p>
+      //     </div>
+      //     <div class="col-md-2">
+      //       <p><strong>$${item.price}</strong></p>
+      //     </div>
+      //     <div class="col-md-2">
+      //       <button class="btn btn-danger" onclick="removeFromCart(${index})">Remove</button>
+      //     </div>
+      //   `;
+
+      cartContainer.appendChild(cartItem);
+    });
+
+    totalAmountElem.innerHTML = `<p><strong>Total Amount:</strong> $${totalAmount}</p>`;
   }
+}
 
 
 
@@ -88,7 +101,7 @@ function logout() {
 }
 
 // Load the cart and welcome message when the page loads
-window.onload = function() {
+window.onload = function () {
   loadCart();
   loadWelcomeMessage();
 };
